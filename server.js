@@ -5,6 +5,9 @@ const PORT = process.env.PORT || 5000
 
 connectDB()
 
+// Init Middleware
+app.use(express.json({extended: false}))
+
 // Define routes
 app.use('/api/users', require('./routes/users.js'))
 app.use('/api/contacts', require('./routes/contacts'))
