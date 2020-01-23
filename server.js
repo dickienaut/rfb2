@@ -14,3 +14,6 @@ app.use('/api/contacts', require('./routes/contacts'))
 app.use('/api/contacts', require('./routes/auth'))
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+
+
+// _rscr
