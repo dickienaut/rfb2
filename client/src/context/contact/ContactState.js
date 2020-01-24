@@ -34,6 +34,16 @@ const ContactState = (props) => {
           "user": "5e29b396a89a255eda5e95ed",
           "date": "2020-01-23T19:04:03.840Z",
           "__v": 0
+      },
+      {
+          "type": "professional",
+          "_id": "5e2a1a70b0dd59677b4d5bde",
+          "name": "Travis",
+          "email": "travis@gmail.com",
+          "phone": "360-595-2635",
+          "user": "5e29b396a89a255eda5e95ed",
+          "date": "2020-01-23T22:13:04.059Z",
+          "__v": 0
       }
     ]
   }
