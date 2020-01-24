@@ -13,7 +13,7 @@ const ContactForm = () => {
 
    const { name, email, phone, type } = contact
    const { addContact, updateContact, current, clearCurrent } = contactContext
-   console.log(current)
+
 
    useEffect(() => {
      if(current) {
