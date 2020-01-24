@@ -207,6 +207,7 @@ img {
   cursor: pointer;
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
+  text-align: center;
   outline: none;
 }
 
