@@ -8,17 +8,24 @@ import {
   CLEAR_FILTER
 } from '../types.js';
 
-  export default (state, action) => {
-    switch(action.type) {
-      case ADD_CONTACT:
+export default (state, action) => {
+  switch(action.type) {
+    case ADD_CONTACT:
+      return {
+        ...state,
+        contacts: [...state.contacts, action.payload]
+      };
+
+      case DELETE_CONTACT:
         return {
           ...state,
-          contacts: [...state.contacts, action.payload]
-        };
+          contacts: state.contacts.filter(contact => contact._id !== action.payload)
+        }
 
       default:
         return state;
 
 
-    }
+
   }
+}
