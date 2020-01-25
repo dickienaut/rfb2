@@ -9,8 +9,12 @@ import AlertState from './context/alert/AlertState.js'
 import Register from './components/auth/Register.js'
 import Login from './components/auth/Login.js'
 import Alerts from './components/layout/Alerts.js'
-
+import setAuthToken from './utils/setAuthToken.js'
 import './App.css';
+
+if(localStorage.token) {
+  setAuthToken(localStorage.token)
+}
 
 const App = () => {
   return (
