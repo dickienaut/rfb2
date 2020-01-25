@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 
 const Login = () => {
   const [user, setUser] = useState({
-    name: '',
     email: '',
     password: ''
   })
 
-  const { name, email, password } = user
+  const { email, password } = user
 
   const onChange = (e) => {
     setUser({
