@@ -13,6 +13,7 @@ import {
 
 export default (state, action) => {
   switch(action.type) {
+
     case GET_CONTACTS:
       return {
         ...state,
@@ -86,8 +87,5 @@ export default (state, action) => {
 
     default:
       return state;
-
-
-
   }
 }

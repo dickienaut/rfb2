@@ -10,7 +10,6 @@ const Navbar = ({title, icon}) => {
 
   const { isAuthenticated, logout, user, token} = authContext
   const { clearContacts } = contactContext
-  console.log(token)
 
   const onLogout = () => {
     logout()

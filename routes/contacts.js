@@ -54,16 +54,55 @@ router.post('/', [auth , [
 // @route   PUT api/contacts
 // @desc    Update contact
 // @access  Private
-router.put('/:id', (req, res) => {
-  res.send('Update contact')
+router.put('/:id', auth, async (req, res) => {
+  try {
+    const contact = await Contact.findById(req.params.id)
+
+    contact.name = req.body.name ? req.body.name : contact.name;
+    contact.email = req.body.email;
+    contact.phone = req.body.phone;
+    contact.type = req.body.type
+
+
+    await contact.save()
+    res.json(contact)
+  } catch (err) {
+    console.error(err)
+    res.status(500).send('Server Error')
+  }
 });
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// const contact = await Contact.findById(req.params.id, function (err, contact) {
+//   console.log(contact)
+//   console.log(req)
+//   contact.name = req.body.name ? req.body.name : contact.name;
+//   contact.email = req.body.email;
+//   contact.phone = req.body.phone;
+//   contact.type = req.body.type
+//
+//
+// })
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 // @route   DELETE api/contacts
 // @desc    Delete contact
 // @access  Private
-router.delete('/:id', (req, res) => {
-  res.send('Delete contact')
+router.delete('/:id', auth, async (req, res) => {
+  try {
+    const contact = await Contact.findById(req.params.id)
+    console.log(contact)
+    await contact.remove()
+    res.json({ msg: 'Contact Removed' })
+  } catch (err) {
+    console.error(err.message)
+    res.status(500).send('Server Error')
+  }
 });
 
 
